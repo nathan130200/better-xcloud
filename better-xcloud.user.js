@@ -27,6 +27,11 @@ div[class*=Grip-module__container] {
 #uhfSkipToMain, .uhf-footer {
     display: none;
 }
+
+/* Hide splash video (still have sound) */
+video[class*=XboxSplashVideo] {
+    display: none !important;
+}
 `;
 
     document.documentElement.appendChild(style);
