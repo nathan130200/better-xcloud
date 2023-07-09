@@ -9,6 +9,7 @@
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
+'use strict';
 
 function addCss() {
     const style = document.createElement('style');
@@ -74,20 +75,16 @@ function blockTracking() {
     }
 }
 
-(function() {
-    'use strict';
+// Clear data of window.navigator.userAgentData, force Xcloud to detect browser based on User-Agent header
+Object.defineProperty(window.navigator, 'userAgentData', {});
 
-    // Clear data of window.navigator.userAgentData, force Xcloud to detect browser based on User-Agent header
-    Object.defineProperty(window.navigator, 'userAgentData', {});
+// Disable bandwidth checking
+Object.defineProperty(window.navigator, 'connection', {
+    get: () => undefined,
+});
 
-    // Disable bandwidth checking
-    Object.defineProperty(window.navigator, 'connection', {
-        get: () => undefined,
-    });
+// Block tracking
+blockTracking();
 
-    // Block tracking
-    blockTracking();
-
-    // Add additional CSS
-    addCss();
-})();
+// Add additional CSS
+addCss();
