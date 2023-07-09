@@ -21,7 +21,10 @@ div[class*=Grip-module__container] {
 
 /* Add video filters: https://developer.mozilla.org/en-US/docs/Web/CSS/filter */
 #game-stream video {
-    filter: saturate(110%);
+    filter: saturate(110%) contrast(110%) brightness(110%);
+
+    /* Fill xcloud video screen (eg. 4:3 resolutions, or even when running browser in non fullscreen mode) */
+    object-fit: 'fill'; 
 }
 
 /* Hide footer */
@@ -31,6 +34,12 @@ div[class*=Grip-module__container] {
 
 /* Hide splash video (still have sound) */
 video[class*=XboxSplashVideo] {
+    display: none !important;
+}
+
+/* Hide not focused warning dialog */
+
+div[class*=NotFocusedDialog] {
     display: none !important;
 }
 `;
