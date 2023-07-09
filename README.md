@@ -20,6 +20,8 @@ Improve Xbox Cloud Gaming (xCloud) experience
 Mozilla/5.0 (Windows NT 10.0; Win64; x64; Xbox;) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67
 ```
 This will trick xCloud to think you're using Edge browser on an Xbox console. It might or might not improve the stream's quality. You might need to install an extension to do that.  
+  
+Add ` smarttv` at the end of User-Agent to use Smart TV layout.  
 
 Tested on:
 - Chrome on macOS.
