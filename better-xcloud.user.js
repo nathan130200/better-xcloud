@@ -60,15 +60,14 @@ function blockTracking() {
     };
 
     const orgFetch = window.fetch;
-    const mockResponse = new Response('{"acc":1,"webResult":{}}', {
-        status: 200,
-        statusText: '200 OK',
-    });
     window.fetch = async (...arg) => {
         const request = arg[0];
         if (typeof request === 'string' && request.startsWith(blockedUrl)) {
             // Return fake response
-            return mockResponse;
+            return new Response('{"acc":1,"webResult":{}}', {
+                status: 200,
+                statusText: '200 OK',
+            });
         }
 
         return orgFetch(...arg);
