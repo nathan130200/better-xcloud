@@ -5,7 +5,7 @@ Improve Xbox Cloud Gaming (xCloud) experience
 - Block a lot of tracking in background.
 - Disable bandwidth checking -> xCloud always tries to use the best possible quality.
 - Hide splash video (still have sound).
-- Hide the top-left dots icon while playing.
+- Make the top-left dots icon invisible while playing. You can still click on it, but it doesn't block the screen anymore.
 - Add video filter. Default: set saturation to 110%. This won't affect latency.
 - Hide footer and other UI elements.
 
